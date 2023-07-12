@@ -50,19 +50,30 @@ const CozShopping = styled.div`
 `;
 
 const Menu = styled.div`
-  height: 35px;
+  height: 28px;
   width: 30px;
-  background-color: lightgray;
   position: absolute;
   right: 70px;
-  > div {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  > div.a {
+    height: 4px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
   }
-  > div {
-
+  > div.b {
+    height: 4px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
   }
-  > div {
-
+  > div.c {
+    height: 4px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
   }
 `;
 
@@ -76,7 +87,11 @@ function Header() {
         <div className="c"></div>
       </Logo>
       <CozShopping>COZ Shopping</CozShopping>
-      <Menu></Menu>
+      <Menu>
+        <div className="a"></div>
+        <div className="b"></div>
+        <div className="c"></div>
+      </Menu>
     </HeaderBody>
     )
   }
