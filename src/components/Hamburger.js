@@ -5,6 +5,9 @@ import { faGift, faStar } from "@fortawesome/free-solid-svg-icons";
 
 
 const HamburgerDropdown = styled.div`
+  position: absolute;
+  right: 43px;
+  top: 50px;
   > div.top,
     div.middle,
     div.bottom {
@@ -26,12 +29,24 @@ const HamburgerDropdown = styled.div`
   > div.bottom {
       border-radius: 0 0 15px 15px;
   }
+  > div.triangle {
+      width: 0;
+      height: 0;
+      margin-left: 140px;
+      border-bottom: 30px solid lightgray;
+      border-top: 0px solid transparent;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+  }
 `;
 
 
 function Hamburger() {
+ 
+
   return (
     <HamburgerDropdown>
+      <div className="triangle"></div>
       <div className="top">정윤민님, 안녕하세요!</div>
       <div className="middle">
         <FontAwesomeIcon icon={faGift} />&nbsp;

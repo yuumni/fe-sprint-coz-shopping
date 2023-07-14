@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components';
+import Hamburger from "./Hamburger";
 
 const HeaderBody = styled.div`
   width: 100vw;
@@ -10,6 +11,7 @@ const HeaderBody = styled.div`
   display: flex;
   position: sticky;
   align-items: center;
+  border-bottom: 1px solid;
 `;
 
 const Logo = styled.div`
@@ -79,6 +81,12 @@ const Menu = styled.div`
 
 
 function Header() {
+  const [view, setView] = useState(false);
+
+  const dropHamburger = () => {
+    setView(!view);
+  }
+
   return (
     <HeaderBody>
       <Logo>
@@ -87,11 +95,12 @@ function Header() {
         <div className="c"></div>
       </Logo>
       <CozShopping>COZ Shopping</CozShopping>
-      <Menu>
+      <Menu onClick={dropHamburger}>
         <div className="a"></div>
         <div className="b"></div>
         <div className="c"></div>
       </Menu>
+      {view && <Hamburger />}
     </HeaderBody>
     )
   }
